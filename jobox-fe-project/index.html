@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesedi's Contract Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Contract Application</h1>
+
+        <div class="mb-3">
+            <label for="clientName">Name of Client:</label>
+            <input type="text" id="clientName">
+
+            <label for="startDate">Contract Start Date:</label>
+            <input class="form-control form-control-lg" type="date" id="startDate">
+
+            <label for="endDate">Contract End Date:</label>
+            <input class="form-control form-control-lg" type="date" id="endDate">
+
+            <label for="serviceCost">Service Cost:</label>
+            <input class="form-control form-control-lg" type="number" id="serviceCost">
+
+            <label for="serviceDescription">Service Description:</label>
+            <textarea class="form-control form-control-lg" id="serviceDescription" rows="4"></textarea>
+
+            <button id="generate-contract-btn" onclick="generateContract()">Generate Contract</button>
+            <button id="download-contract-btn" onclick="downloadContract()" disabled>Download Contract</button>
+        </div>
+
+        <div id="contract-template" class="contract-template" contenteditable="true">
+            <!-- Contract template content here -->
+            [Client Name], on [Contract Start Date] agrees to pay [Service Cost] for the following services: [Service Description]. This agreement is valid until [Contract End Date].
+        </div>
+    </div>
+
+    <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
